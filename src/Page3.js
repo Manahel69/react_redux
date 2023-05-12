@@ -41,13 +41,13 @@ function App() {
      >
        <div className="text-sm lg:flex-grow">
          <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-           First Link
+           Page 1
          </a>
          <a href="/page2" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-           Second Link
+           Page 2
          </a>
          <a href="/page3" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-           Third Link
+           Page 3
          </a>
          
        </div>
@@ -55,7 +55,7 @@ function App() {
      </div>
    </nav>
 
-<p>Page 3  </p>
+<p> Bienvenue sur la Page 3  </p>
   
 </div>
 

@@ -1,0 +1,145 @@
+<nav class="mx-auto block w-full max-w-screen-xl rounded-xl border border-white/80 bg-white bg-opacity-80 py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+    <div>
+      <div class="container mx-auto flex items-center justify-between text-gray-900">
+        <a
+          href="/"
+          class="mr-4 block cursor-pointer py-1.5 font-sans text-sm font-normal leading-normal text-inherit antialiased"
+        >
+          <span>Home</span>
+        </a>
+        <ul class="hidden items-center gap-6 lg:flex">
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="/Page2">
+              Page 2 
+            </a>
+          </li>
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="/Page3">
+              Page 3 
+            </a>
+          </li>   
+        </ul>
+        
+        <button
+          class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+          data-collapse-target="navbar"
+        >
+          <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="block h-0 w-full basis-full overflow-hidden text-blue-gray-900 transition-all duration-300 ease-in lg:hidden"
+        data-collapse="navbar"
+      >
+        
+      </div>
+    </div>
+  </nav>
+     <h1 style={{fontSize:"48px"}}>{counter}</h1>
+     <h2 style={{fontSize:"24px"}}>{values.description}</h2>
+     <h3 style={{fontSize:"12px"}}>{values.details}</h3>
+     
+     <button onClick={() => setCounter(counter+1)}>+</button>
+     <button onClick={() => setCounter(counter-1)}>-</button>
+  <br></br>
+  
+     <input type='text' name='description' onChange={(event) => handleChange(event)}></input>
+     <input type='text' name='details' onChange={(event) => handleChange(event)}></input>
+     <br></br>
+  
+  <div class="w-full max-w-sm">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+          Name
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+         name="name" type="text" placeholder="Name" onChange={(event) => handleChange(event)}></input>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+         name="email" type="text" placeholder="Email" onChange={(event) => handleChange(event)}></input>
+      </div>
+  
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+         id="password" type="password" placeholder="******************" onChange={(event) => handleChange(event)}></input>
+      </div>
+      <div class="md:flex md:items-center">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button"
+        onClick={() => setIsSubmit(true)}>
+          SUBMIT
+        </button>
+        </div>
+        </form>
+  </div>
+  
+  <Link to="/page2">page2</Link>
+  
+  <div class="md:flex md:items-center">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+        type="button"
+        onClick={() => isFirst(true)}
+        >
+        SUIVANT
+        </button>
+  
+  </div>
+  {
+   first && <p>firstComponent
+     <div class="md:flex md:items-center">
+   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+   type="button"
+   onClick={() => isSeconde(true)}
+   >
+   SUIVANT
+   </button>
+  
+  </div>  </p>
+  
+  }
+  
+  
+  {
+   seconde && <p>seconde componenent
+     <div class="md:flex md:items-center">
+   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+   type="button"
+   onClick={() => isThird(true)}
+   >
+   SUIVANT
+   </button>
+  
+  </div>  </p>
+  
+  }
+  
+  {
+   third && <p>third componenent  </p>
+  
+  }
+  
+  
+  {
+    isSubmit &&  <p>{values.name} {values.email} {values.password}</p>
+  }
